@@ -13,6 +13,7 @@
     <li>
       #<%= ticket.id %> -
       <%= link_to ticket.title, [@project, ticket] %>
+      <%= link_to "Edit Ticket", [:edit, @project, @ticket] %>
     </li>
   <% end %>
 </ul>
