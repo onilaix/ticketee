@@ -36,4 +36,9 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
   config.include EmailSpec::Helpers
+  config.include Devise::TestHelpers, :type => :controller
+  
+  config.before do
+    ActionMailer::Base.deliveries.clear
+  end
 end
