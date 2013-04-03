@@ -14,7 +14,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Ticketee Test Application</h1>
+<h1>Ticketee Test Application delafia</h1>
 
 <% flash.each do |key, value| %>
   <div class='flash' id='<%= key %>'>
@@ -22,17 +22,17 @@
   </div>
 <% end %>
 
-<nav>
+<div>
 <% if user_signed_in? %>
   Signed in as <%= current_user.email %>
-<% else %>
+  <% admins_only do %>
+    <%= link_to "Admin", admin_root_path %>
+  <% end %>
+
+<% else %>	
   <%= link_to "Sign up", new_user_registration_path %>
 <% end %>
-</nav>
-
-<nav>
-<%= link_to "Sign in", new_user_session_path %>
-</nav>
+</div>
 
 
 <%= yield %>
