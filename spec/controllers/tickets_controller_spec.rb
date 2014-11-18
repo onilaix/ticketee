@@ -1,5 +1,5 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe TicketsController do
+RSpec.describe TicketsController, :type => :controller do
 
 end

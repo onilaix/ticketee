@@ -1,40 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>
-    <% if content_for?(:title) %>
-      <%= yield(:title) %>
-    <% else %>
-      Ticketee
-    <% end %>
-  </title>
-
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
+   <title>
+     <% if content_for?(:title) %>
+       <%= yield(:title) %>
+     <% else %>
+       Ticketee
+     <% end %>
+   </title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1>Ticketee Test Application delafia</h1>
 
 <% flash.each do |key, value| %>
-  <div class='flash' id='<%= key %>'>
-    <%= value %>
-  </div>
-<% end %>
-
-<div>
-<% if user_signed_in? %>
-  Signed in as <%= current_user.email %>
-  <% admins_only do %>
-    <%= link_to "Admin", admin_root_path %>
-  <% end %>
-
-<% else %>	
-  <%= link_to "Sign up", new_user_registration_path %>
-  <%= link_to "Sign in", new_user_session_path %>
-<% end %>
+<div class='flash' id='<%= key %>'>
+<%= value %>
 </div>
-
+<% end %>
 
 <%= yield %>
 
