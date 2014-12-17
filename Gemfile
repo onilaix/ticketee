@@ -53,3 +53,6 @@ end
 
 # authorization framework
 gem 'cancan'
+
+# to upload files
+gem 'carrierwave'
