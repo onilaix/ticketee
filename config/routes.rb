@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  
+  resources :files
   # Example resource route with options:
   #   resources :products do
   #     member do
