@@ -47,5 +47,8 @@ class AssetUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
+  
+ # def uploaded_file= file
+ #   self.location = file.read
+ # end
 end
